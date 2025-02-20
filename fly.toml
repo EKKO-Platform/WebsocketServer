@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for websocket-server-wandering-frost-3812 on 2025-01-14T16:27:08Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'websocket-server-wandering-frost-3812'
+primary_region = 'ewr'
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '4gb'
+  cpu_kind = 'shared'
+  cpus = 2
